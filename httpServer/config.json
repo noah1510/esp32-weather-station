@@ -17,6 +17,11 @@
       "path": "/hello",
       "controller": "helloController",
       "http_methods": ["get","post"]
+    },
+    {
+      "path": "/record",
+      "controller": "dataRecordController",
+      "http_methods": ["post"]
     }
   ],
   "log": {

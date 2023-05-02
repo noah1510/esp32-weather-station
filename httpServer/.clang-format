@@ -16,4 +16,4 @@ PackConstructorInitializers: Never
 AllowShortFunctionsOnASingleLine: Inline
 AlignConsecutiveDeclarations: Consecutive
 ConstructorInitializerIndentWidth: 4
-Standard: c++17
+Standard: c++20
