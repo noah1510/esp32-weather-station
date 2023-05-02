@@ -1,3 +1,9 @@
 build
+.idea
+
 subprojects/*
 !subprojects/drogon.wrap
+
+logs/*
+uploads/*
+dataRecords/*

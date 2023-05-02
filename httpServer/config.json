@@ -1,0 +1,28 @@
+{
+  "threads_num": 16,
+  "document_root": "./",
+  "upload_path":"uploads",
+  "client_max_body_size": "10M",
+  "client_max_memory_body_size": "50K",
+  "run_as_daemon": false,
+  "listeners": [
+    {
+      "address": "0.0.0.0",
+      "port": 7000,
+      "https": false
+    }
+  ],
+  "simple_controllers_map": [
+    {
+      "path": "/hello",
+      "controller": "helloController",
+      "http_methods": ["get","post"]
+    }
+  ],
+  "log": {
+    "log_path": "./logs/",
+    "logfile_base_name": "",
+    "log_size_limit": 100000000,
+    "log_level": "TRACE"
+  }
+}

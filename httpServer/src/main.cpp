@@ -1,6 +1,10 @@
+#include <drogon/drogon.h>
+#include "helloController.hpp"
+
 #include <iostream>
 
-int main(int argc, char** argv) {
-    std::cout << "Hello World" << std::endl;
-    return 0;
+using namespace drogon;
+
+int main(){
+    app().loadConfigFile("./config.json").run();
 }

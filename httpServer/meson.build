@@ -11,7 +11,8 @@ project(
 incdir = include_directories('include')
 
 sources = [
-  'src/main.cpp'
+  'src/main.cpp',
+  'src/helloController.cpp',
 ]
 
 deps = [
@@ -21,13 +22,14 @@ deps = [
 
 cmake = import('cmake')
 
-# Configure the CMake project
 drogon_opts = cmake.subproject_options()
 drogon_opts.add_cmake_defines({
   'BUILD_DOC': false,
   'BUILD_PROGRAMS': false,
   'BUILD_EXAMPLES': false,
   'BUILD_CTL': false,
+  'BUILD_SHARED_LIBS': get_option('default_library') == 'shared',
+  'USE_SUBMODULE': true,
 })
 drogon_opts.set_override_option('cpp_std', 'c++17')
 drogon_opts.set_override_option('c_std', 'c11')
@@ -39,6 +41,7 @@ drogon_proj = cmake.subproject('drogon', options: drogon_opts)
 # Fetch the dependency object
 message('drogon CMake targets:\n - ' + '\n - '.join(drogon_proj.target_list()))
 deps += drogon_proj.dependency('drogon')
+deps += drogon_proj.dependency('trantor')
 
 exe = executable(
   'httpserver',
