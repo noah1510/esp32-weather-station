@@ -1,0 +1,5 @@
+[wrap-git]
+url = https://github.com/drogonframework/drogon.git
+revision = v1.8.4
+depth = 1
+clone-recursive = true
